@@ -1,9 +1,7 @@
 import { DOCUMENT, Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
-// TODO: confirm the GitHub Pages URL (or custom domain) once the repo is
-// created and Pages is enabled, and keep it in sync with sitemap.xml / robots.txt.
-export const SITE_URL = 'https://cpeteradison.github.io/finance-web';
+export const SITE_URL = 'https://finance-money.github.io/manager';
 const SITE_NAME = 'Finance';
 
 export interface SeoData {
