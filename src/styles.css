@@ -5,7 +5,7 @@
   --bg-hover: #1c1c1c;
   --ink: #ffffff;
   --muted: #9ca3af;
-  --faint: #6b7280;
+  --faint: #7a8290;
   --line: rgba(255, 255, 255, 0.12);
   --line-strong: rgba(255, 255, 255, 0.22);
   --accent: #4ade80;
@@ -122,6 +122,11 @@ app-header {
   letter-spacing: -0.02em;
 }
 
+.brand-suffix {
+  font-weight: 600;
+  color: var(--muted);
+}
+
 /* ── Inner pages ── */
 .page-main {
   max-width: 900px;
@@ -130,16 +135,8 @@ app-header {
 }
 
 .page-title {
-  margin-bottom: 40px;
+  margin-bottom: 26px;
   text-align: left;
-}
-
-.eyebrow {
-  color: #43c774;
-  font-weight: 600;
-  margin: 0 0 18px;
-  font-size: 0.95rem;
-  letter-spacing: 0.005em;
 }
 
 .page-title h1 {
@@ -160,11 +157,11 @@ app-header {
 
 .content {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .content section {
-  padding: 24px 26px;
+  padding: 16px 22px;
   border-radius: var(--radius-lg);
   background: var(--bg-surface);
   border: 1px solid var(--line);
@@ -283,6 +280,10 @@ app-header {
   .brand-name {
     font-size: 1.4rem;
     line-height: 1.6rem;
+  }
+
+  .brand-suffix {
+    display: none;
   }
 
   .page-main {
