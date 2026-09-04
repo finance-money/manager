@@ -108,6 +108,12 @@ app-header {
   text-decoration: none;
 }
 
+.brand-logo {
+  height: 44px;
+  width: auto;
+  border-radius: 12px;
+}
+
 .brand-name {
   font-size: 1.75rem;
   line-height: 2rem;
@@ -264,6 +270,14 @@ app-header {
   .site-header {
     gap: 12px;
     height: 68px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    height: 36px;
   }
 
   .brand-name {
