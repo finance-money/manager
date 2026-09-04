@@ -1,0 +1,284 @@
+/* ── Theme tokens ── */
+:root {
+  --bg: #000000;
+  --bg-surface: #121212;
+  --bg-hover: #1c1c1c;
+  --ink: #ffffff;
+  --muted: #9ca3af;
+  --faint: #6b7280;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --accent: #4ade80;
+  --radius-sm: 12px;
+  --radius-lg: 22px;
+  --gutter: max(clamp(20px, 6vw, 96px), calc((100vw - 960px) / 2));
+
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ── Scroll reveal (fade-up) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* ── Header ── */
+/* Host element must not box the header, or sticky has no room to travel. */
+app-header {
+  display: contents;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 var(--gutter);
+  height: 84px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .site-header {
+    background: var(--bg);
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-name {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+/* ── Inner pages ── */
+.page-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(52px, 8vw, 90px) clamp(18px, 5vw, 46px);
+}
+
+.page-title {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.eyebrow {
+  color: #43c774;
+  font-weight: 600;
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+  letter-spacing: 0.005em;
+}
+
+.page-title h1 {
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  max-width: none;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.page-title p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.content {
+  display: grid;
+  gap: 12px;
+}
+
+.content section {
+  padding: 24px 26px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+}
+
+.content h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.content p,
+.content li {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
+}
+
+.content a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.content ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+/* ── Contact ── */
+.contact-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+
+.contact-line:last-child {
+  border-bottom: 0;
+}
+
+.contact-line strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.contact-line span,
+.contact-line a {
+  color: var(--muted);
+}
+
+/* ── Footer ── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 30px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--faint);
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover,
+.footer-links a.active {
+  color: var(--ink);
+}
+
+.footer-copy {
+  color: var(--faint);
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+  .site-header {
+    gap: 12px;
+    height: 68px;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .page-main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .site-footer {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px;
+  }
+}
