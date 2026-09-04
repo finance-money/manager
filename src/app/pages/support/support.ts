@@ -8,7 +8,7 @@ import { Seo } from '../../services/seo';
 export class Support {
   constructor() {
     inject(Seo).update({
-      title: 'Support | Finance',
+      title: 'Finance: Money Manager — Support',
       description: 'Get help with Finance: bug reports, feature requests, and general feedback.',
       path: 'support',
     });

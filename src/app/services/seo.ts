@@ -2,7 +2,7 @@ import { DOCUMENT, Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 export const SITE_URL = 'https://finance-money.github.io/manager';
-const SITE_NAME = 'Finance';
+const SITE_NAME = 'Finance: Money Manager';
 
 export interface SeoData {
   /** Full <title> text. */

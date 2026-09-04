@@ -8,7 +8,7 @@ import { Seo } from '../../services/seo';
 export class Privacy {
   constructor() {
     inject(Seo).update({
-      title: 'Privacy Policy | Finance',
+      title: 'Finance: Money Manager — Privacy Policy',
       description:
         'How Finance handles your data: a local-first personal finance app with optional iCloud Sync. Learn what is stored and how it is used.',
       path: 'privacy',
