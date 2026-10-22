@@ -35,7 +35,7 @@ export class Reveal implements OnInit {
 
     const rect = node.getBoundingClientRect();
     if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
-      // Already in view on load — animate in on the next frame.
+      // Already in view on load, so animate in on the next frame.
       requestAnimationFrame(reveal);
       return;
     }

@@ -8,7 +8,7 @@ import { Seo } from '../../services/seo';
 export class Terms {
   constructor() {
     inject(Seo).update({
-      title: 'Finance: Money Manager — Terms of Use',
+      title: 'Finance: Money Manager | Terms of Use',
       description: 'The terms that apply to using the Finance app.',
       path: 'terms',
     });
