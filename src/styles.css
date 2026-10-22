@@ -112,6 +112,8 @@ app-header {
   height: 44px;
   width: auto;
   border-radius: 12px;
+  /* The same light outline as the App Store badge across the header. */
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .brand-name {
@@ -125,6 +127,29 @@ app-header {
 .brand-suffix {
   font-weight: 600;
   color: var(--muted);
+}
+
+/* Pushed to the far end of the header. Apple's badge, never recolored or
+   reshaped, with the light outline Teiki's site gives it on black. */
+.app-store-badge {
+  margin-left: auto;
+  display: inline-flex;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: transform 0.12s, border-color 0.15s;
+}
+
+.app-store-badge:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.app-store-badge img {
+  display: block;
+  height: 40px;
+  width: auto;
+  border-radius: 10px;
 }
 
 /* ── Inner pages ── */
@@ -314,6 +339,10 @@ app-header {
 
   .brand-suffix {
     display: none;
+  }
+
+  .app-store-badge img {
+    height: 36px;
   }
 
   .page-main {
